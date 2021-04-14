@@ -4,6 +4,14 @@ from square import Square
 
 pygame.init()
 
+COLORS = {
+    'BLACK' : (0, 0, 0),
+    'WHITE' : (255, 255, 255),
+    'BLUE'  : (0, 0, 200),
+    'GREEN' : (0, 200, 0),
+    'RED'   : (200, 0, 0)    
+}
+
 WINDOW_SIZE = (640,480)
 tile_size = 10
 
