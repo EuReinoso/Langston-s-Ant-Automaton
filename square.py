@@ -15,6 +15,6 @@ class Square:
             self.dir = self.graf[self.state]
             self.state += 1
         else: 
-            self.state = 0
+            self.state = 1
             self.dir = self.graf[self.state]
         
