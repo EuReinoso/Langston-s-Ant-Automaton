@@ -14,6 +14,12 @@ def grid_init():
             rect = pygame.Rect(i * tile_size, j * tile_size, tile_size, tile_size)
             grid_list[i][j] = Square(rect)
 
+def draw_grid():
+    for line in grid_list:
+        for sqr in line:
+            pygame.draw.rect(window, (0,0,0), sqr.rect)
+            pygame.draw.rect(window, (200,200,200), sqr.rect, 1)
+
 window = pygame.display.set_mode(WINDOW_SIZE)
 pygame.display.set_caption('Langston Ant')
 
@@ -26,5 +32,5 @@ while True:
         if event.type == pygame.QUIT:
             pygame.quit()
             sys.exit()
-    
+    draw_grid()
     pygame.display.update()
