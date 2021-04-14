@@ -22,16 +22,29 @@ def grid_init():
             rect = pygame.Rect(i * tile_size, j * tile_size, tile_size, tile_size)
             grid_list[i][j] = Square(rect)
 
+def adjacents_init():
+    for i in range(len(grid_list)):
+        for j in range(len(grid_list[0])):
+            if i > 0:
+                grid_list[i][j].adjacents['up'] = grid_list[i - 1][j]
+            if i < len(grid_list) - 1:
+                grid_list[i][j].adjacents['down'] = grid_list[i + 1][j]
+            if j > 0:
+                grid_list[i][j].adjacents['left'] = grid_list[i][j - 1]
+            if j < len(grid_list[0]) - 1:
+                grid_list[i][j].adjacents['right'] = grid_list[i][j + 1]
+
 def draw_grid():
     for line in grid_list:
         for sqr in line:
-            pygame.draw.rect(window, (0,0,0), sqr.rect)
-            pygame.draw.rect(window, (200,200,200), sqr.rect, 1)
+            pygame.draw.rect(window, COLORS['BLACK'], sqr.rect)
+            pygame.draw.rect(window, COLORS['WHITE'], sqr.rect, 1)
 
 window = pygame.display.set_mode(WINDOW_SIZE)
 pygame.display.set_caption('Langston Ant')
 
 grid_init()
+adjacents_init()
 while True:
 
     window.fill((0, 0, 0))
