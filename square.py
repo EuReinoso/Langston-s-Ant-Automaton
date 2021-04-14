@@ -3,10 +3,18 @@ import pygame
 pygame.init()
 
 class Square:
-    def __init__(self,rect):
+    def __init__(self,rect,graf):
         self.rect = pygame.Rect(rect)
-        self.color = (0, 0, 0)
+        self.graf = graf
+        self.state = 0
+        self.dir = graf[self.state]
         self.adjacents = {'up' : None, 'down' : None, 'left' : None, 'right' : None}
-
-    def draw(self,window,color):
-        pygame.draw.rect(window, color, self.rect)
+    
+    def next_color(self):
+        if self.state < len(self.graf):
+            self.dir = self.graf[self.state]
+            self.state += 1
+        else: 
+            self.state = 0
+            self.dir = self.graf[self.state]
+        
