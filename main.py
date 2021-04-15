@@ -2,6 +2,7 @@ import pygame,sys
 import numpy as np
 from square import Square
 from ant import Ant
+from grafs import Grafs
 
 pygame.init()
 
@@ -18,14 +19,10 @@ COLORS = {
     6 : (200, 0, 200)    
 }
 
-graf = {
-    0 : 'r',
-    1 : 'l',
-    2 : 'r',
-}
+graf = Grafs.create_graf('lllrrr')
 
 WINDOW_SIZE = (640,480)
-tile_size = 10
+tile_size = 12
 
 grid_list = np.empty(shape= (WINDOW_SIZE[0]//tile_size, WINDOW_SIZE[1]//tile_size),dtype= object)
 
@@ -69,7 +66,7 @@ def draw_grid():
                 pygame.draw.rect(window, WHITE, sqr.rect)
 
 window = pygame.display.set_mode(WINDOW_SIZE)
-pygame.display.set_caption('Langston Ant')
+pygame.display.set_caption('Langton Ant')
 
 grid_init()
 adjacents_init()
