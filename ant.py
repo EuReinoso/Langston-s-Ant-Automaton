@@ -8,37 +8,40 @@ class Ant:
         self.dir = 'right'
     
     def walk(self):
+        
         if self.dir == 'right':
             if self.actual.dir == 'r':
-                self.actual = self.actual.adjacents['down']
-                self.dir = 'down'
+                next_square = self.actual.adjacents['down']
+                next_dir = 'down'
             if self.actual.dir == 'l':
-                self.actual = self.actual.adjacents['up']
-                self.dir = 'up'
+                next_square= self.actual.adjacents['up']
+                next_dir = 'up'
 
         if self.dir == 'left':
             if self.actual.dir == 'r':
-                self.actual = self.actual.adjacents['up']
-                self.dir = 'up'
+                next_square = self.actual.adjacents['up']
+                next_dir = 'up'
             if self.actual.dir == 'l':
-                self.actual = self.actual.adjacents['down']
-                self.dir = 'down'
+                next_square = self.actual.adjacents['down']
+                next_dir = 'down'
         
         if self.dir == 'up':
             if self.actual.dir == 'r':
-                self.actual = self.actual.adjacents['right']
-                self.dir = 'right'
+                next_square = self.actual.adjacents['right']
+                next_dir = 'right'
             if self.actual.dir == 'l':
-                self.actual = self.actual.adjacents['left']
-                self.dir = 'left'
+                next_square = self.actual.adjacents['left']
+                next_dir = 'left'
         
         if self.dir == 'down':
             if self.actual.dir == 'r':
-                self.actual = self.actual.adjacents['left']
-                self.dir = 'left'
+                next_square = self.actual.adjacents['left']
+                next_dir = 'left'
             if self.actual.dir == 'l':
-                self.actual = self.actual.adjacents['right']
-                self.dir = 'right'
+                next_square = self.actual.adjacents['right']
+                next_dir = 'right'
         
         self.actual.next_color()
+        self.actual = next_square
+        self.dir = next_dir
             

@@ -11,10 +11,11 @@ class Square:
         self.adjacents = {'up' : None, 'down' : None, 'left' : None, 'right' : None}
     
     def next_color(self):
-        if self.state < len(self.graf):
-            self.dir = self.graf[self.state]
+        if self.state < len(self.graf) - 1:
             self.state += 1
+            self.dir = self.graf[self.state]
         else: 
             self.state = 1
             self.dir = self.graf[self.state]
+            teste = 1
         

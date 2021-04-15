@@ -12,13 +12,16 @@ COLORS = {
     0 : (0, 0, 0),
     1  : (0, 0, 200),
     2 : (0, 200, 0),
-    3   : (200, 0, 0)    
+    3   : (200, 0, 0),
+    4 : (200, 200, 0),
+    5 : (0, 200, 200),
+    6 : (200, 0, 200)    
 }
 
 graf = {
     0 : 'r',
     1 : 'l',
-    2 : 'r'
+    2 : 'r',
 }
 
 WINDOW_SIZE = (640,480)
@@ -53,15 +56,20 @@ def draw_grid():
                 pygame.draw.rect(window, COLORS[sqr.state], sqr.rect)
             if sqr.state == 2:
                 pygame.draw.rect(window, COLORS[sqr.state], sqr.rect)
+            if sqr.state == 3:
+                pygame.draw.rect(window, COLORS[sqr.state], sqr.rect)
+            if sqr.state == 4:
+                pygame.draw.rect(window, COLORS[sqr.state], sqr.rect)
+            if sqr.state == 5:
+                pygame.draw.rect(window, COLORS[sqr.state], sqr.rect)
+            if sqr.state == 6:
+                pygame.draw.rect(window, COLORS[sqr.state], sqr.rect)
 
             if sqr == ant.actual:
                 pygame.draw.rect(window, WHITE, sqr.rect)
-            
-            #pygame.draw.rect(window, COLORS['WHITE'], sqr.rect, 1)
 
 window = pygame.display.set_mode(WINDOW_SIZE)
 pygame.display.set_caption('Langston Ant')
-
 
 grid_init()
 adjacents_init()
