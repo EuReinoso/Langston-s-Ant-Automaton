@@ -12,6 +12,18 @@ The rules for the operation of this automata are as follows:
 - Each color has a 'rule' that says whether the ant should go right or left.
 - Every time the ant passes through a square, it changes to the next color in the set.
 
+### Learn More
+
+- English links:
+
+    - [Wiki](https://en.wikipedia.org/wiki/Langton%27s_ant)
+    - [Youtube](https://www.youtube.com/watch?v=1X-gtr4pEBU)
+
+- Portuguese links:
+    
+    - [Wiki](https://pt.wikipedia.org/wiki/Formiga_de_Langton)
+    - [Youtube](https://www.youtube.com/watch?v=1X-gtr4pEBU) 
+
 Example of a set:
 
 <img src= "https://github.com/EuReinoso/Langston-s-Ant-Automaton/blob/master/assets/set.png" width = "80" height = "180" />
